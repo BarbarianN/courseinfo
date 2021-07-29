@@ -1,8 +1,8 @@
 import React from 'react'
 
-const course = 'Half Stack application development'
-
-const parts = [
+const course = {
+  name: 'Half Stack application development',
+  parts: [
     {
       name: 'Fundamentals of React',
       exercises: 10
@@ -16,6 +16,7 @@ const parts = [
       exercises: 14
     }
   ]
+}
 
 
 const Titulo = (promp) => {
@@ -44,17 +45,14 @@ const Total = (promp) => {
   )
 }
 
-
-
-
 const Main = () => {
   return(
     <div>
-      <Titulo dtl={course}/>
-      <Parts part={parts[0].name} num1={parts[0].exercises} />
-      <Parts part={parts[1].name} num1={parts[1].exercises} />
-      <Parts part={parts[2].name} num1={parts[2].exercises} />
-      <Total e1={parts[0].exercises} e2={parts[1].exercises} e3={parts[2].exercises} />
+      <Titulo dtl={course.name}/>
+      <Parts part={course.parts[0].name} num1={course.parts[0].exercises} />
+      <Parts part={course.parts[1].name} num1={course.parts[1].exercises} />
+      <Parts part={course.parts[2].name} num1={course.parts[2].exercises} />
+      <Total e1={course.parts[0].exercises} e2={course.parts[1].exercises} e3={course.parts[2].exercises} />
     </div>
   )
 }
